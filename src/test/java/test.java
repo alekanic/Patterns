@@ -43,8 +43,8 @@ public class test {
         $("[data-test-id=agreement]").click();
         $("button.button").click();
 
-        $(byText("Успешно")).shouldBe(visible, Duration.ofSeconds(15));
-        $("[data-test-id=success-notification] .notification__content")
+        $(byText("Успешно!")).shouldBe(visible, Duration.ofSeconds(15));
+        $("[data-test-id='success-notification'] .notification__content")
                 .shouldHave(exactText("Встреча успешно запланирована на " + firstMeetingDate))
                 .shouldBe(visible);
 
@@ -52,7 +52,7 @@ public class test {
         $("[data-test-id=date] input").setValue(secondMeetingDate);
         $("button.button").click();
 
-        $("[data-test-id='replan-notification] .notification__content")
+        $("[data-test-id='replan-notification'] .notification__content")
                 .shouldHave(text("У вас уже запланирована встреча на другую дату. Перепланировать?"))
                 .shouldBe(visible);
 
