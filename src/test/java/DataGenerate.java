@@ -2,16 +2,15 @@
 
 import com.github.javafaker.Faker;
 import lombok.Value;
-import lombok.experimental.UtilityClass;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.Random;
 
-public class dataGenerate {
+public class DataGenerate {
 
-    private dataGenerate() {}
+    private DataGenerate() {}
 
     public static String generateDate(int shift) {
         return LocalDate.now().plusDays(shift).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));

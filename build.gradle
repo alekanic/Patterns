@@ -27,6 +27,10 @@ dependencies {
     testCompileOnly 'org.projectlombok:lombok:1.18.28'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.28'
 
+    //Подключение Rest-Assured
+    testImplementation 'io.rest-assured:rest-assured:4.3.0'
+    testImplementation 'com.google.code.gson:gson:2.8.6'
+
 }
 
 test {

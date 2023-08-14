@@ -1,23 +1,18 @@
 
 
-import com.codeborne.selenide.Condition;
 import com.github.javafaker.Faker;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 
 import java.time.Duration;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Locale;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class test {
+public class TestData {
 
     private static Faker faker;
     
@@ -29,11 +24,11 @@ public class test {
 
     void positiveTest() {
         
-        dataGenerate.UserInfo validUser = dataGenerate.Registration.generateUser("ru");
+        DataGenerate.UserInfo validUser = DataGenerate.Registration.generateUser("ru");
         int daysToAddForFirstMeeting = 4;
-        String firstMeetingDate = dataGenerate.generateDate(daysToAddForFirstMeeting);
+        String firstMeetingDate = DataGenerate.generateDate(daysToAddForFirstMeeting);
         int daysToAddForSecondMeeting = 7;
-        String secondMeetingDate = dataGenerate.generateDate(daysToAddForSecondMeeting);
+        String secondMeetingDate = DataGenerate.generateDate(daysToAddForSecondMeeting);
 
         $("[data-test-id=city] input").setValue(validUser.getCity());
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
